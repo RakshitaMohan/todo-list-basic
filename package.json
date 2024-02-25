@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.0",
     "antd": "^5.14.2",
     "lodash": "^4.17.21",
     "mobx": "^6.12.0",

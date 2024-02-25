@@ -44,35 +44,40 @@ function ListItems (props) {
               }}
             >
                 <Input
-                style={{
-                    width: '50%',
-                    height: '56px',
-                    borderBottom: '2px solid black'
-                }}
-                placeholder='Lets write before you forget'
-                value={itemValue}
-                onChange={(e) => {
-                    setValue(e.target.value);
-                }}
-                onPressEnter={() => {
-                    const itemId = IdGeneratorService.generateId();
-                    list.addItem({
-                        item: {
-                            itemId: `list:${itemId}`,
-                            text: itemValue,
-                            time: new Date().getTime()
-                        }
-                    });
+                  style={{
+                      width: '50%',
+                      height: '56px',
+                      borderBottom: '2px solid black'
+                  }}
+                  placeholder='Lets write before you forget'
+                  value={itemValue}
+                  onChange={(e) => {
+                      setValue(e.target.value);
+                  }}
+                  onPressEnter={() => {
+                      if(!itemValue) {
+                        return;
+                      }
 
-                    setValue();
-                }}
+                      const itemId = IdGeneratorService.generateId();
+                      list.addItem({
+                          item: {
+                              itemId: `list:${itemId}`,
+                              text: itemValue,
+                              time: new Date().getTime()
+                          }
+                      });
+
+                      setValue();
+                  }}
                 />
             </Flex>
             <Flex 
               vertical
+              gap={16}
               style={{
                 overflow: 'scroll',
-                width: '100%',
+                width: 'auto',
                 height: '500px',
                 marginLeft: '32px'
               }}
