@@ -11,12 +11,17 @@ import TodoItemStore from './TodoItemStore';
 class TodoListStore {
     allTodoList = {};
 
-    constructor () {
+    constructor (opts) {
+        const { list = {} } = opts;
         makeObservable(this, {
             allTodoList: observable,
             lists: computed,
             updateTodoList: action.bound,
             addList: action.bound,
+        });
+
+        this.addList({
+            list
         });
     }
 
@@ -52,6 +57,30 @@ class TodoListStore {
     }
 } 
 
-const store = new TodoListStore();
+const store = new TodoListStore({
+    list: {
+        listName: 'Things To Do',
+        listId: 'tekfdkffpffpfk',
+        items: [
+            {
+                itemId: 'grocery',
+                text: 'Tomato, Potato, Fruits',
+                isStarred: true
+            },
+            {
+                itemId: 'crayons',
+                text: 'Buy crayons',
+            },            {
+                itemId: 'oliveOil',
+                text: 'Get Extra virgin Olive Oil',
+            },
+            {
+                itemId: 'GasFill',
+                text: 'GasFill',
+                isCompleted: true,
+            }
+        ]
+    }
+});
 
 export default store;

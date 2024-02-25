@@ -24,7 +24,9 @@ class ItemStore {
             isCompleted: observable,
             time: observable,
             isStarred: observable,
-            updateText: action.bound
+            updateText: action.bound,
+            toggleStarred: action.bound,
+            toggleComplete: action.bound
         });
 
         this.itemId = itemId;
@@ -38,6 +40,14 @@ class ItemStore {
         if (text) {
             this.text = text;
         }
+    }
+
+    toggleComplete () {
+        this.isCompleted = !this.isCompleted;
+    }
+
+    toggleStarred () {
+        this.isStarred = !this.isStarred;
     }
 }
 
