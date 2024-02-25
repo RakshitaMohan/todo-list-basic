@@ -1,0 +1,25 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5100",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "antd": "^5.14.2",
+    "lodash": "^4.17.21",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "short-unique-id": "^5.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  }
+}
