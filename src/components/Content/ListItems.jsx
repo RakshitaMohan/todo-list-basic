@@ -84,7 +84,7 @@ function ListItems (props) {
             >
                 {
                     items?.map((item) => {
-                        return <SingleItem item={item} />
+                        return <SingleItem key={item.itemId} item={item} />
                     })
                 }
             </Flex>

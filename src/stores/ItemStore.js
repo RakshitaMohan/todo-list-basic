@@ -4,9 +4,6 @@ import {
     observable,
     makeObservable,
     action,
-    computed,
-    reaction,
-    values,
 } from 'mobx';
 
 class ItemStore {

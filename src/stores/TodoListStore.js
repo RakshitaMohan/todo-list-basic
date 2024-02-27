@@ -5,18 +5,16 @@ import {
     computed,
     values,
 } from 'mobx';
-import _ from 'lodash';
 import TodoItemStore from './TodoItemStore';
 
 class TodoListStore {
     allTodoList = {};
 
-    constructor (opts) {
+    constructor (opts = {}) {
         const { list = {} } = opts;
         makeObservable(this, {
             allTodoList: observable,
             lists: computed,
-            updateTodoList: action.bound,
             addList: action.bound,
         });
 
@@ -27,14 +25,6 @@ class TodoListStore {
 
     get lists () {
         return values(this.allTodoList);
-    }
-
-    updateTodoList (data = {}) {
-        if(data?.todoList?.length > 0) {
-           _.forEach(data.todoList, (list) => {
-            this.addList({ list });
-           });
-        }
     }
 
     addList ({ list }) {
@@ -50,7 +40,7 @@ class TodoListStore {
         });
 
         if (items.length > 0) {
-            _.forEach(items, (item) => {
+            items.forEach((item) => {
                 this.allTodoList[listId].addItem({ item });
             })
         }

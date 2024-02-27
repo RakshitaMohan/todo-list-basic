@@ -56,7 +56,7 @@ function TodoWrapper () {
           }}
         >
             <Tabs
-              items={items?.length ? items : []}
+              items={items.length ? items : []}
               tabPosition='top'
               style={{
                 flexGrow: 1,

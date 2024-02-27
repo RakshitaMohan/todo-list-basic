@@ -62,12 +62,14 @@ function SingleItem (props) {
           </Flex>
           <Flex gap={16}>
             <Button
+              type='text'
               icon={<EditOutlined />}
               onClick={() => {
                 setEditing(true);
               }}
             />
             <Button
+              type='text'
               onClick={() => {
                 item.toggleComplete()
               }}
