@@ -57,7 +57,7 @@ function TodoWrapper () {
         >
             <Tabs
               items={items.length ? items : []}
-              tabPosition='top'
+              tabPosition='left'
               style={{
                 flexGrow: 1,
                 height: '80%'

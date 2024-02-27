@@ -21,7 +21,8 @@ function ListItems (props) {
         <Flex vertical
           style={{
             height: '100%',
-            width: '100%'
+            width: '100%',
+            marginLeft: '24px'
           }}
         >
             <Title
